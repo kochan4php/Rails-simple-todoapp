@@ -16,7 +16,9 @@ class TodosController < ApplicationController
 
   def create 
     @todo = Todo.new(resource_params)
-    redirect_to todos_path if @todo.save
+    if @todo.save
+      redirect_to todos_path, notice: "Todo berhasil ditambahkan"
+    end
   end
 
   def edit 
