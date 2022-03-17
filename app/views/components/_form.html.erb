@@ -1,14 +1,14 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-5 p-4" style="background-color: #bada;">
-      <h2 class="text-center mb-4">Add New Todo</h2>
+      <h2 class="text-center mb-4"><%= form_action %></h2>
       <%= form_with(model: @todo) do |form| %>
         <div class="mb-3">
           <%= form.label :activity, {class: "form-label"} %>
           <%= form.text_field :activity, {class: "form-control"} %>
         </div>
         <div class="mb-3">
-          <%= form.submit "Add New Todo", class: "btn btn-primary w-100" %>
+          <%= form.submit form_action, class: "btn btn-primary w-100" %>
         </div>
         <div class="mb-3">
           <%= link_to "Batalkan", todos_path, :class => "btn btn-warning w-100" %>

@@ -13,4 +13,38 @@ class TodosController < ApplicationController
     @navbar_brand = "Tambah Kegiatan Baru"
     @todo = Todo.new
   end
+
+  def create 
+    @todo = Todo.new(resource_params)
+    redirect_to todos_path if @todo.save
+  end
+
+  def edit 
+    @todo = Todo.find_by(id: params[:id])
+
+    if !@todo
+      redirect_to todos_path
+    else 
+      @title = "Edit Kegiatan"
+      @navbar_brand = "Edit Kegiatan"
+    end
+  end
+
+  def update 
+    @todo = Todo.find_by(id: params[:id])
+    @todo.update(resource_params)
+    redirect_to todos_path
+  end
+
+  def destroy
+    @todo = Todo.find_by(id: params[:id])
+    @todo.destroy
+    redirect_to todos_path
+  end
+
+  private 
+    def resource_params
+      # Sesuai nama model
+      params.require(:todo).permit(:activity)
+    end
 end
