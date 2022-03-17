@@ -1,22 +1,36 @@
 <nav class="navbar navbar-dark bg-primary">
   <div class="container">
-    <%# <a class="navbar-brand" href="/"><img src="https://img.icons8.com/fluency/30/000000/ruby-programming-language.png"/>&nbsp;</a> %>
     <%= link_to navbar_brand, root_path, :class => "navbar-brand fs-4" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="https://img.icons8.com/fluency/30/000000/ruby-programming-language.png"/>&nbsp;<%= navbar_brand %></h5>
+        <h5 class="offcanvas-title fs-4" id="offcanvasNavbarLabel"><%= navbar_brand %></h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
+      <hr>
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Home</a>
+            <%= link_to root_path, :class => "nav-link text-dark fs-5" do %>
+              <i class="bi bi-house-door-fill"></i>&nbsp;&nbsp;Beranda
+            <% end %>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Link</a>
+            <%= link_to todos_path, :class => "nav-link text-dark fs-5" do %>
+              <i class="bi bi-list-task"></i>&nbsp;&nbsp;Daftar Todo
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to completed_todos_path, :class => "nav-link text-dark fs-5" do %>
+              <i class="bi bi-check-square-fill"></i>&nbsp;&nbsp;Selesai
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to uncompleted_todos_path, :class => "nav-link text-dark fs-5" do %>
+              <i class="bi bi-exclamation-triangle"></i>&nbsp;&nbsp;Belum Selesai
+            <% end %>
           </li>
         </ul>
       </div>

@@ -42,6 +42,32 @@ class TodosController < ApplicationController
     redirect_to todos_path
   end
 
+  def completed 
+    @title = "Sudah Selesai"
+    @navbar_brand = "Sudah Selesai"
+    @todos = Todo.where(status: 0)
+  end
+
+  def uncompleted
+    @title = "Belum Selesai"
+    @navbar_brand = "Belum Selesai"
+    @todos = Todo.where(status: 1)
+  end
+
+  def set_status 
+    todo = Todo.find_by(id: params[:id])
+
+    if todo.status == 1
+      todo.status = 0      
+    elsif todo.status == 0
+      todo.status = 1
+    end
+
+    todo.save
+
+    redirect_to todos_path
+  end
+
   private 
     def resource_params
       # Sesuai nama model

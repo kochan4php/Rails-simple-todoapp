@@ -1,17 +1,25 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-md-5 p-4" style="background-color: #bada;">
+    <div class="col-md-6 p-4 rounded" style="background-color: #bada;">
       <h2 class="text-center mb-4"><%= form_action %></h2>
       <%= form_with(model: @todo) do |form| %>
         <div class="mb-3">
-          <%= form.label :activity, {class: "form-label"} %>
+          <%= form.label :activity, "Nama Kegiatan", {class: "form-label"} %>
           <%= form.text_field :activity, {class: "form-control"} %>
         </div>
-        <div class="mb-3">
-          <%= form.submit form_action, class: "btn btn-primary w-100" %>
-        </div>
-        <div class="mb-3">
-          <%= link_to "Batalkan", todos_path, :class => "btn btn-warning w-100" %>
+        <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-12">
+            <div class="mb-3">
+              <%= form.submit form_action, class: "btn btn-primary w-100" %>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <div class="mb-3">
+              <%= link_to todos_path, :class => "btn btn-danger w-100" do %>
+                <i class="bi bi-x-lg"></i>&nbsp;&nbsp;Batalkan
+              <% end %>
+            </div>
+          </div>
         </div>
       <% end %>
     </div>
