@@ -1,24 +1,6 @@
-# README
+# Rails 7 Todolist App (Without login system)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+System requirement:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- <a href="https://rubyinstaller.org/">Ruby 3.1</a>
+- <a href="https://rubyonrails.org/">Ruby on Rails 7.0.2.3</a>
