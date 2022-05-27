@@ -1,4 +1,4 @@
-# Rails 7 Todolist App (Without login system)
+# Rails 7 Todolist App
 
 System requirement:
 
